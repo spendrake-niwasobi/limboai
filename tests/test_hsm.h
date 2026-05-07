@@ -17,6 +17,10 @@
 #include "modules/limboai/hsm/limbo_hsm.h"
 #include "modules/limboai/hsm/limbo_state.h"
 
+#ifdef LIMBOAI_MODULE
+#include "core/object/callable_mp.h"
+#endif // LIMBOAI_MODULE
+
 #include "core/object/object.h"
 #include "core/object/ref_counted.h"
 #include "core/os/memory.h"

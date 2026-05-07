@@ -19,6 +19,7 @@
 #include "../util/limbo_utility.h"
 
 #ifdef LIMBOAI_MODULE
+#include "core/object/callable_mp.h"
 #include "scene/resources/font.h"
 #endif // LIMBOAI_MODULE
 

@@ -15,6 +15,7 @@
 
 #ifdef LIMBOAI_MODULE
 #include "core/config/engine.h"
+#include "core/object/class_db.h"
 #endif // LIMBOAI_MODULE
 
 #ifdef LIMBOAI_GDEXTENSION

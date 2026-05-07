@@ -11,6 +11,11 @@
 
 #include "limbo_hsm.h"
 
+#ifdef LIMBOAI_MODULE
+#include "core/object/callable_mp.h"
+#include "core/object/class_db.h"
+#endif // LIMBOAI_MODULE
+
 VARIANT_ENUM_CAST(LimboHSM::UpdateMode);
 
 void LimboHSM::set_active(bool p_active) {

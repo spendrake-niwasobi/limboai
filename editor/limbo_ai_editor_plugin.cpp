@@ -40,6 +40,8 @@
 
 #ifdef LIMBOAI_MODULE
 #include "core/input/input.h"
+#include "core/io/resource_saver.h"
+#include "core/object/callable_mp.h"
 #include "editor/debugger/editor_debugger_node.h"
 #include "editor/debugger/script_editor_debugger.h"
 #include "editor/docks/filesystem_dock.h"
@@ -48,6 +50,7 @@
 #include "editor/script/script_editor_plugin.h"
 #include "editor/settings/project_settings_editor.h"
 #include "scene/gui/separator.h"
+#include "servers/display/display_server.h"
 #endif // LIMBOAI_MODULE
 
 #ifdef LIMBOAI_GDEXTENSION
@@ -1950,14 +1953,17 @@ void LimboAIEditorPlugin::_notification(int p_notification) {
 			add_debugger_plugin(memnew(LimboDebuggerPlugin));
 			add_inspector_plugin(memnew(EditorInspectorPluginBBPlan));
 
-			EditorInspectorPluginVariableName *var_plugin = memnew(EditorInspectorPluginVariableName);
+			Ref<EditorInspectorPluginVariableName> var_plugin;
+			var_plugin.instantiate();
 			var_plugin->set_editor_plan_provider(Callable(limbo_ai_editor, "get_edited_blackboard_plan"));
 			add_inspector_plugin(var_plugin);
 
-			EditorInspectorPluginPropertyPath *path_plugin = memnew(EditorInspectorPluginPropertyPath);
+			Ref<EditorInspectorPluginPropertyPath> path_plugin;
+			path_plugin.instantiate();
 			add_inspector_plugin(path_plugin);
 
-			EditorInspectorPluginBBParam *param_plugin = memnew(EditorInspectorPluginBBParam);
+			Ref<EditorInspectorPluginBBParam> param_plugin;
+			param_plugin.instantiate();
 			param_plugin->set_plan_getter(Callable(limbo_ai_editor, "get_edited_blackboard_plan"));
 			add_inspector_plugin(param_plugin);
 		} break;

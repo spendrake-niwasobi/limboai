@@ -14,6 +14,10 @@
 #include "../../compat/variant.h"
 #include "../../util/limbo_utility.h"
 
+#ifdef LIMBOAI_MODULE
+#include "core/object/class_db.h"
+#endif // LIMBOAI_MODULE
+
 VARIANT_ENUM_CAST(BBParam::ValueSource);
 
 void BBParam::set_value_source(ValueSource p_value) {

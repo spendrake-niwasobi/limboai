@@ -11,6 +11,10 @@
 
 #include "bb_variant.h"
 
+#ifdef LIMBOAI_MODULE
+#include "core/object/class_db.h"
+#endif // LIMBOAI_MODULE
+
 void BBVariant::set_type(Variant::Type p_type) {
 	if (type != p_type) {
 		type = p_type;
